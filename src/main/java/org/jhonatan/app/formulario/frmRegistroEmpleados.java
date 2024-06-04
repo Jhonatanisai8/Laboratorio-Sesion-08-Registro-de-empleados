@@ -8,11 +8,11 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
 
     //declaracion de la cola
     public class Nodo {
-        
+
         String codigo, nombre, apellidos, sexo;
         float sueldo;
         Nodo siguiente;
-        
+
         public Nodo(String codigo, String nombre, String apellidos, String sexo, float sueldo) {
             this.codigo = codigo;
             this.nombre = nombre;
@@ -22,7 +22,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
             this.siguiente = null;
         }
     }
-    
+
     private void mensaje(String data) {
         StringTokenizer st = new StringTokenizer(data, ",");
         //partiendo el texto
@@ -31,7 +31,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         String a = st.nextToken();
         String s = st.nextToken();
         String su = st.nextToken();
-        
+
         String datos = "Descripcion del dato eliminado: \n"
                 + "Codigo     : " + c + "\n"
                 + "Nombre     : " + n + "\n"
@@ -46,10 +46,19 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
     String data[][] = {};
 
     //declaracion de variables locales
+    public Nodo frente, finCola;
+    public Nodo pfound;
+    int num = 0, tam;
+
     public frmRegistroEmpleados() {
         initComponents();
+        finCola = null;
+        tam = 0;
+        //inicializando la tabla
+        miModelo = new DefaultTableModel(data, cabezera);
+        tblDatos.setModel(miModelo);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -394,7 +403,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
 
     private void txtApellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidosActionPerformed
     }//GEN-LAST:event_txtApellidosActionPerformed
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
