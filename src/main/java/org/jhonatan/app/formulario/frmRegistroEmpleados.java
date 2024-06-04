@@ -379,6 +379,11 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
 
         btnRestaurar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnRestaurar.setText("Restaurar");
+        btnRestaurar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRestaurarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout GuardarBtn4Layout = new javax.swing.GroupLayout(GuardarBtn4);
         GuardarBtn4.setLayout(GuardarBtn4Layout);
@@ -620,6 +625,11 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnConsultarMouseClicked
+
+    private void btnRestaurarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRestaurarMouseClicked
+        limpiarEntradas();
+        deshabilitar();
+    }//GEN-LAST:event_btnRestaurarMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
