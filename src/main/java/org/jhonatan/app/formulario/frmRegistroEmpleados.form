@@ -466,16 +466,21 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel13" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel13" pref="399" max="32767" attributes="0"/>
                           <Component id="txtnombreEmpleadoMayor" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel14" max="32767" attributes="0"/>
-                          <Component id="txtMontoAcumulados" max="32767" attributes="0"/>
+                          <Component id="jLabel14" min="-2" pref="216" max="-2" attributes="0"/>
+                          <Component id="txtMontoAcumulados" min="-2" pref="167" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel15" alignment="0" min="-2" pref="216" max="-2" attributes="0"/>
+                          <Component id="txtTamanio" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -484,6 +489,11 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel15" min="-2" pref="39" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtTamanio" min="-2" pref="50" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="102" attributes="0">
                               <Component id="jLabel14" min="-2" pref="39" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -514,6 +524,13 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtMontoAcumulados">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel15">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tama&#xf1;o de la lista:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtTamanio">
             </Component>
           </SubComponents>
         </Container>

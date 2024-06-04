@@ -150,6 +150,28 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         }
     }
     
+    public void verDatos() {
+        //variable para recorrer la lista
+        String cod, nom, ape, se, su;
+        Nodo aux = frente;
+        vaciarTabla();
+        num = 0;
+        while (aux != null) {
+            cod = aux.codigo;
+            nom = aux.nombre;
+            ape = aux.apellidos;
+            se = aux.sexo;
+            //dando formato al sueldo
+            DecimalFormat df2 = new DecimalFormat("####.00");
+            su = df2.format(aux.sueldo);
+            num++;
+            Object[] fila = {num, cod, nom, ape, se, su};
+            miModelo.addRow(fila);
+            aux = aux.siguiente;
+        }
+        txtTamanio.setText(String.valueOf(num));
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -187,6 +209,8 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         txtnombreEmpleadoMayor = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         txtMontoAcumulados = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        txtTamanio = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -413,26 +437,36 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
 
         jLabel14.setText("Monto de sueldos acumulados");
 
+        jLabel15.setText("Tamaño de la lista:");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
                     .addComponent(txtnombreEmpleadoMayor))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtMontoAcumulados))
-                .addGap(38, 38, 38))
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMontoAcumulados, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTamanio, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTamanio, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -544,6 +578,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -560,6 +595,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
     private javax.swing.JTextField txtMontoAcumulados;
     private javax.swing.JTextField txtNombres;
     private javax.swing.JTextField txtSueldo;
+    private javax.swing.JTextField txtTamanio;
     private javax.swing.JTextField txtnombreEmpleadoMayor;
     // End of variables declaration//GEN-END:variables
 }
