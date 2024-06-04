@@ -4,11 +4,29 @@ import javax.swing.table.DefaultTableModel;
 
 public class frmRegistroEmpleados extends javax.swing.JFrame {
 
+    //declaracion de la cola
+    public class Nodo {
+
+        String codigo, nombre, apellidos, sexo;
+        float sueldo;
+        Nodo siguiente;
+
+        public Nodo(String codigo, String nombre, String apellidos, String sexo, float sueldo) {
+            this.codigo = codigo;
+            this.nombre = nombre;
+            this.apellidos = apellidos;
+            this.sexo = sexo;
+            this.sueldo = sueldo;
+            this.siguiente = null;
+        }
+
+    }
     //declaracion del formato de la tabla
     DefaultTableModel miModelo;
     String cabezera[] = {"Nº", "Codigo", "Nombres", "Apellidos", "Sexo", "Sueldo"};
     String data[][] = {};
 
+    //declaracion de variables locales
     public frmRegistroEmpleados() {
         initComponents();
     }
