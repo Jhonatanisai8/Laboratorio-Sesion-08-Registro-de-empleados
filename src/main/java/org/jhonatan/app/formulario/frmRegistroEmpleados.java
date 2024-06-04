@@ -82,6 +82,23 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         finCola.siguiente = null;
     }
 
+    public String frente() {
+        String eliminado = "";
+        Nodo aux = frente;
+        //extraendo los datos a ser eliminados
+        String c = aux.codigo;
+        String n = aux.nombre;
+        String a = aux.apellidos;
+        String s = aux.sexo;
+        float su = aux.sueldo;
+
+        eliminado = c + "," + n + "," + s + "," + String.valueOf(su);
+
+        //actualixado la referencia del frente
+        frente = frente.siguiente;
+        return eliminado;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
