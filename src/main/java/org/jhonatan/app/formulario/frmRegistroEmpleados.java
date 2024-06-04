@@ -78,7 +78,6 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         } else {
             finCola.siguiente = nuevo;
         }
-        finCola.siguiente = nuevo;
         finCola = nuevo;
         finCola.siguiente = null;
     }
@@ -93,7 +92,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         String s = aux.sexo;
         float su = aux.sueldo;
 
-        eliminado = c + "," + n + "," + s + "," + String.valueOf(su);
+        eliminado = c + "," + a + "," + n + "," + s + "," + String.valueOf(su);
 
         //actualixado la referencia del frente
         frente = frente.siguiente;
@@ -239,7 +238,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
 
         jLabel5.setText("Sexo");
 
-        cbxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Seleccione--" }));
+        cbxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Seleccione--", "Femenino", "Masculino" }));
 
         jLabel6.setText("Sueldo:");
 
@@ -252,12 +251,12 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(56, 56, 56)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtCodigo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNombres, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)))
+                            .addComponent(txtNombres, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -310,7 +309,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         GuardarBtn.setLayout(GuardarBtnLayout);
         GuardarBtnLayout.setHorizontalGroup(
             GuardarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         GuardarBtnLayout.setVerticalGroup(
             GuardarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -331,7 +330,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         GuardarBtn1.setLayout(GuardarBtn1Layout);
         GuardarBtn1Layout.setHorizontalGroup(
             GuardarBtn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btnConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         GuardarBtn1Layout.setVerticalGroup(
             GuardarBtn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -352,7 +351,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         GuardarBtn2.setLayout(GuardarBtn2Layout);
         GuardarBtn2Layout.setHorizontalGroup(
             GuardarBtn2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         GuardarBtn2Layout.setVerticalGroup(
             GuardarBtn2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -373,7 +372,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         GuardarBtn3.setLayout(GuardarBtn3Layout);
         GuardarBtn3Layout.setHorizontalGroup(
             GuardarBtn3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btnActualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         GuardarBtn3Layout.setVerticalGroup(
             GuardarBtn3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -394,7 +393,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         GuardarBtn4.setLayout(GuardarBtn4Layout);
         GuardarBtn4Layout.setHorizontalGroup(
             GuardarBtn4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnRestaurar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btnRestaurar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         GuardarBtn4Layout.setVerticalGroup(
             GuardarBtn4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -410,7 +409,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         GuardarBtn5.setLayout(GuardarBtn5Layout);
         GuardarBtn5Layout.setHorizontalGroup(
             GuardarBtn5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         GuardarBtn5Layout.setVerticalGroup(
             GuardarBtn5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -423,7 +422,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(GuardarBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(GuardarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(GuardarBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -486,7 +485,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTamanio, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -582,7 +581,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         String sueldo = txtSueldo.getText();
 
         //creando el nodo de la lista en memoria y colocando la informacion
-        encolar(cod, nom, sueldo, sex, Float.parseFloat(sueldo));
+        encolar(cod, nom, ape, sex, Float.parseFloat(sueldo));
         tam = tam + 1;
         //llamando a los demas metodos
         limpiarEntradas();
