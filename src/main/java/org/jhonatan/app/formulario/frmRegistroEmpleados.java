@@ -316,6 +316,11 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
 
         btnConsultar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnConsultar.setText("Consultar");
+        btnConsultar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnConsultarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout GuardarBtn1Layout = new javax.swing.GroupLayout(GuardarBtn1);
         GuardarBtn1.setLayout(GuardarBtn1Layout);
@@ -591,6 +596,30 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
             resumen();
         }
     }//GEN-LAST:event_btnEliminarMouseClicked
+
+    private void btnConsultarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultarMouseClicked
+        String codigo = txtCodigo.getText();
+        if (codigo.equalsIgnoreCase("")) {
+            JOptionPane.showMessageDialog(rootPane, "INGRESE EL CODIGO A BUSCAR POR FAVOR", "ATENCION", JOptionPane.WARNING_MESSAGE);
+        } else {
+            //llamada a la funcion que retorna la poscion del dato buscado
+            pfound = buscar(finCola, codigo);
+            if (pfound != null) {
+                txtNombres.setText(pfound.nombre);
+                txtApellidos.setText(pfound.apellidos);
+                if (pfound.sexo.equalsIgnoreCase("MASCULINO")) {
+                    cbxSexo.setSelectedIndex(2);
+                } else {
+                    cbxSexo.setSelectedIndex(1);
+                }
+                txtSueldo.setText(String.valueOf(pfound.sueldo));
+                //habilitamos los objetos para eliminar y actualizar
+                habilitar();
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "EL CODIGO " + codigo + ", no esta en la lista", "ATENCION", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnConsultarMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
