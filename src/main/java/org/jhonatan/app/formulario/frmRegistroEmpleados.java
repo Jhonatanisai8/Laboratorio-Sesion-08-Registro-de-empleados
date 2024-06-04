@@ -295,6 +295,11 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
 
         btnGuardar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnGuardar.setText("Guardar");
+        btnGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnGuardarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout GuardarBtnLayout = new javax.swing.GroupLayout(GuardarBtn);
         GuardarBtn.setLayout(GuardarBtnLayout);
@@ -547,6 +552,23 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         verDatos();
         resumen();
     }//GEN-LAST:event_btnActualizarMouseClicked
+
+    private void btnGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseClicked
+        //capturando la informacion de los objetos
+        String cod = txtCodigo.getText();
+        String nom = txtNombres.getText().toUpperCase();
+        String ape = txtApellidos.getText().toUpperCase();
+        String sex = cbxSexo.getSelectedItem().toString();
+        String sueldo = txtSueldo.getText();
+
+        //creando el nodo de la lista en memoria y colocando la informacion
+        encolar(cod, nom, sueldo, sex, Float.parseFloat(sueldo));
+        tam = tam + 1;
+        //llamando a los demas metodos
+        limpiarEntradas();
+        verDatos();
+        resumen();
+    }//GEN-LAST:event_btnGuardarMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
