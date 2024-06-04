@@ -1,16 +1,18 @@
 package org.jhonatan.app.formulario;
 
+import java.util.StringTokenizer;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class frmRegistroEmpleados extends javax.swing.JFrame {
 
     //declaracion de la cola
     public class Nodo {
-
+        
         String codigo, nombre, apellidos, sexo;
         float sueldo;
         Nodo siguiente;
-
+        
         public Nodo(String codigo, String nombre, String apellidos, String sexo, float sueldo) {
             this.codigo = codigo;
             this.nombre = nombre;
@@ -19,7 +21,24 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
             this.sueldo = sueldo;
             this.siguiente = null;
         }
-
+    }
+    
+    private void mensaje(String data) {
+        StringTokenizer st = new StringTokenizer(data, ",");
+        //partiendo el texto
+        String c = st.nextToken();
+        String n = st.nextToken();
+        String a = st.nextToken();
+        String s = st.nextToken();
+        String su = st.nextToken();
+        
+        String datos = "Descripcion del dato eliminado: \n"
+                + "Codigo     : " + c + "\n"
+                + "Nombre     : " + n + "\n"
+                + "Apellidos  : " + a + "\n"
+                + "Sexo       : " + s + "\n"
+                + "Sueldo     : " + su + "\n";
+        JOptionPane.showMessageDialog(rootPane, datos, "Atención", JOptionPane.WARNING_MESSAGE);
     }
     //declaracion del formato de la tabla
     DefaultTableModel miModelo;
@@ -30,7 +49,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
     public frmRegistroEmpleados() {
         initComponents();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -375,7 +394,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
 
     private void txtApellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidosActionPerformed
     }//GEN-LAST:event_txtApellidosActionPerformed
-
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
