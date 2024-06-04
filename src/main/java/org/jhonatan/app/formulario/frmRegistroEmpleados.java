@@ -59,6 +59,14 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         tblDatos.setModel(miModelo);
     }
 
+    public Nodo buscar(Nodo tope,String cod){
+        Nodo pos = frente;
+        //recorremos la lista para encontrar la informacion
+        while (pos != null && !cod.equalsIgnoreCase(pos.codigo)) {
+            pos = pos.siguiente;
+        }
+        return pos;
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
