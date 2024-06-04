@@ -59,7 +59,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         tblDatos.setModel(miModelo);
     }
 
-    public Nodo buscar(Nodo tope,String cod){
+    public Nodo buscar(Nodo tope, String cod) {
         Nodo pos = frente;
         //recorremos la lista para encontrar la informacion
         while (pos != null && !cod.equalsIgnoreCase(pos.codigo)) {
@@ -67,6 +67,21 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         }
         return pos;
     }
+
+    public void encolar(String codigo, String nombre, String apellidos,
+            String sexo, float sueldo) {
+        Nodo nuevo = new Nodo(codigo, nombre, apellidos, sexo, sueldo);
+        //realizamos los enlaces correspondientes
+        if (frente == null) {
+            frente = nuevo;
+        } else {
+            finCola.siguiente = nuevo;
+        }
+        finCola.siguiente = nuevo;
+        finCola = nuevo;
+        finCola.siguiente = null;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
