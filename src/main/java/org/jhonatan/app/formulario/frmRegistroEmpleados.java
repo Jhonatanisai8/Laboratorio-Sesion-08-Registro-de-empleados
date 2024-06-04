@@ -133,6 +133,16 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         btnGuardar.setEnabled(true);
     }
 
+    public void limpiarEntradas() {
+        String t = "";
+        txtCodigo.setText(t);
+        txtNombres.setText(t);
+        txtApellidos.setText(t);
+        txtSueldo.setText(t);
+        cbxSexo.setSelectedIndex(0);
+        txtCodigo.requestFocus();
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
