@@ -332,6 +332,11 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
 
         btnEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnEliminar.setText("Eliminar");
+        btnEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEliminarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout GuardarBtn2Layout = new javax.swing.GroupLayout(GuardarBtn2);
         GuardarBtn2.setLayout(GuardarBtn2Layout);
@@ -569,6 +574,23 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         verDatos();
         resumen();
     }//GEN-LAST:event_btnGuardarMouseClicked
+
+    private void btnEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarMouseClicked
+        if (frente == null) {
+            JOptionPane.showMessageDialog(rootPane, "La Cola esta Vacia", "ATENCIÓN", JOptionPane.WARNING_MESSAGE);
+            txtCodigo.requestFocus();
+        } else {
+            String dato = frente();
+            mensaje(dato);
+            verDatos();
+            limpiarEntradas();
+            if (frente == null) {
+                JOptionPane.showMessageDialog(rootPane, "La lista esta vacia", "ATENCION", JOptionPane.WARNING_MESSAGE);
+            }
+            deshabilitar();
+            resumen();
+        }
+    }//GEN-LAST:event_btnEliminarMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
