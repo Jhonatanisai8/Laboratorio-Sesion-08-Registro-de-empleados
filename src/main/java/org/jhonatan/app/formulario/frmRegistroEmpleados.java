@@ -9,11 +9,11 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
 
     //declaracion de la cola
     public class Nodo {
-
+        
         String codigo, nombre, apellidos, sexo;
         float sueldo;
         Nodo siguiente;
-
+        
         public Nodo(String codigo, String nombre, String apellidos, String sexo, float sueldo) {
             this.codigo = codigo;
             this.nombre = nombre;
@@ -23,7 +23,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
             this.siguiente = null;
         }
     }
-
+    
     private void mensaje(String data) {
         StringTokenizer st = new StringTokenizer(data, ",");
         //partiendo el texto
@@ -32,7 +32,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         String a = st.nextToken();
         String s = st.nextToken();
         String su = st.nextToken();
-
+        
         String datos = "Descripcion del dato eliminado: \n"
                 + "Codigo     : " + c + "\n"
                 + "Nombre     : " + n + "\n"
@@ -50,7 +50,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
     public Nodo frente, finCola;
     public Nodo pfound;
     int num = 0, tam;
-
+    
     public frmRegistroEmpleados() {
         initComponents();
         finCola = null;
@@ -59,7 +59,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         miModelo = new DefaultTableModel(data, cabezera);
         tblDatos.setModel(miModelo);
     }
-
+    
     public Nodo buscar(Nodo tope, String cod) {
         Nodo pos = frente;
         //recorremos la lista para encontrar la informacion
@@ -68,7 +68,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         }
         return pos;
     }
-
+    
     public void encolar(String codigo, String nombre, String apellidos,
             String sexo, float sueldo) {
         Nodo nuevo = new Nodo(codigo, nombre, apellidos, sexo, sueldo);
@@ -82,7 +82,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         finCola = nuevo;
         finCola.siguiente = null;
     }
-
+    
     public String frente() {
         String eliminado = "";
         Nodo aux = frente;
@@ -92,14 +92,14 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         String a = aux.apellidos;
         String s = aux.sexo;
         float su = aux.sueldo;
-
+        
         eliminado = c + "," + n + "," + s + "," + String.valueOf(su);
 
         //actualixado la referencia del frente
         frente = frente.siguiente;
         return eliminado;
     }
-
+    
     public void resumen() {
         String nom = "", acum = "";
         float suma = 0, mayor = -9999;
@@ -122,17 +122,17 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         acum = df2.format(suma);
         txtMontoAcumulados.setText(acum);
     }
-
+    
     public void habilitar() {
         btnActualizar.setEnabled(true);
         btnGuardar.setEnabled(false);
     }
-
+    
     public void deshabilitar() {
         btnActualizar.setEnabled(false);
         btnGuardar.setEnabled(true);
     }
-
+    
     public void limpiarEntradas() {
         String t = "";
         txtCodigo.setText(t);
@@ -142,7 +142,14 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
         cbxSexo.setSelectedIndex(0);
         txtCodigo.requestFocus();
     }
-
+    
+    public void vaciarTabla() {
+        int filas = tblDatos.getRowCount();
+        for (int i = 0; i < filas; i++) {
+            miModelo.removeRow(0);
+        }
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -487,7 +494,7 @@ public class frmRegistroEmpleados extends javax.swing.JFrame {
 
     private void txtApellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidosActionPerformed
     }//GEN-LAST:event_txtApellidosActionPerformed
-
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
